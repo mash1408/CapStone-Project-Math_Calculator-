@@ -59,16 +59,33 @@ button:active {
       top: 10%;
     }
      div.fixed {
-       background-color:white;
+  position: fixed;
+  left:220px;
+  width: 55px;
+  top:-220px;
+  border: 3px solid orange;
+}
+    div.fixed {
+       background-color:#C0C0C0;
   position: absolute;
-  right:35%;
+  right:57%;
   top:65px;
   border: 3px solid orange;
 }
 .border{
-  background-color:white;
+  background-color:#C0C0C0;
   width:270px;
  border: 3px solid orange;
+}
+input[type=text] {
+  width:260px;
+  padding: 4px 4px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  background-color:black;
+  color:white;
+}
+	
 }
   </style>
 </head>
@@ -77,47 +94,47 @@ button:active {
 
    Input:
   <br>
-  <input type="text" id="firstName">
+  <input  type="text" id="firstName">
   <br>
   <br>
-  
-    <button onclick="num1()">1</button>
-    <button>2</button>
-    <button>3</button>
+  <div id="case1">
+    <button onclick="general()" id='1'>1</button>
+    <button onclick="general()" id='2'>2</button>
+    <button onclick="general()" id='3'>3</button>
   
     <br>
   
   <br>
  
-    <button>4</button>
-    <button>5</button>
-    <button>6</button>
+    <button  onclick="general()" id='4'>4</button>
+    <button  onclick="general()" id='5'>5</button>
+    <button  onclick="general()" id='6'>6</button>
    
     <br>
 
   <br>
   
-    <button>7</button>
-    <button>8</button>
-    <button>9</button>
+    <button  onclick="general()" id='7'>7</button>
+    <button  onclick="general()" id='8'>8</button>
+    <button  onclick="general()" id='9'>9</button>
  
     <br>
   
   <br>
   
     <button>.</button>
-    <button>0</button>
+    <button onclick="general()" id='9'>0</button>
     <button >%</button>
+    </div>
     <div class="fixed">
-    <button class="myButton">/</button>
-     <button class="myButton">X</button>
- <button class="myButton">-</button>
-  <button class="myButton">+</button>
-    <button class="myButton">=</button>
+    <button class="myButton"  onclick="general()" id="/">/</button>
+     <button class="myButton" onclick="general()" id="*">X</button>
+ <button class="myButton" onclick="general()" id="-">-</button>
+  <button class="myButton" onclick="general()" id="+">+</button>
+    <button class="myButton" onclick="resultEquals()" id="=">=</button>
 </div>
 <br>
-<br>
-<div class="border">
+ <div class="border">
  <button class="myButton" style="width:130px;  display: inline-block;">C</button>
  
   <button class="myButton" style="width:130px;  display: inline-block;">Ac</button>
