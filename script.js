@@ -1,10 +1,10 @@
 var display = {
   temp: 0,
-  
+  storeExp: [],
   addValues: function(textBox, Value) {
     this.temp = textBox.value;
     textBox.value = this.temp + Value;
-    this.storeExp.push(textBox.value);
+    this.storeExp.push(Value);
   },
   getResult: function(textBox) {
     this.temp = textBox.value;
@@ -13,7 +13,17 @@ var display = {
       textBox.value = 'Invalid';
     }
   },
-  
+  clearChar: function(textBox) {
+    this.storeExp.splice(this.storeExp.length-1, 1);
+    this.temp = 0;
+    for (var i = 0; i < this.storeExp.length; i++) {
+
+      this.temp=this.temp+this.storeExp[i];
+    }
+    textBox.value='';
+    textBox.value=this.temp;
+  }
+
 };
 
 function general() {
@@ -26,4 +36,15 @@ function general() {
 function resultEquals() {
   var inputNumber = document.getElementById("firstName");
   display.getResult(inputNumber);
+}
+function clearInput()
+{
+  var inputNumber = document.getElementById("firstName");
+  display.clearChar(inputNumber);
+}
+
+
+function clearEverything() {
+  var inputNumber = document.getElementById("firstName");
+  inputNumber.value = '';
 }
