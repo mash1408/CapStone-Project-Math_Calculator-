@@ -3,8 +3,14 @@ var display = {
   storeExp: [],
   addValues: function(textBox, Value) {
     this.temp = textBox.value;
+    if(Value==='=')
+    this.flushstoreExp();
     textBox.value = this.temp + Value;
     this.storeExp.push(Value);
+  },
+  flushstoreExp: function()
+  {
+    this.storeExp=[0];
   },
   getResult: function(textBox) {
     this.temp = textBox.value;
@@ -16,7 +22,6 @@ var display = {
   clearChar: function(textBox) {
     this.storeExp.splice(this.storeExp.length-1, 1);
     this.temp = 0;
-    this.storeExp = [0];
     for (var i = 0; i < this.storeExp.length; i++) {
 
       this.temp=this.temp+this.storeExp[i];
@@ -38,14 +43,15 @@ function resultEquals() {
   var inputNumber = document.getElementById("firstName");
   display.getResult(inputNumber);
 }
+
 function clearInput()
 {
   var inputNumber = document.getElementById("firstName");
   display.clearChar(inputNumber);
 }
 
-
 function clearEverything() {
   var inputNumber = document.getElementById("firstName");
   inputNumber.value = '';
+  display.flushstoreExp();
 }
