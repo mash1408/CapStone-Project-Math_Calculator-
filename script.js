@@ -21,7 +21,7 @@ var display = {
   },
   clearChar: function(textBox) {
     this.storeExp.splice(this.storeExp.length-1, 1);
-    this.temp = 0;
+    this.temp ='';
     for (var i = 0; i < this.storeExp.length; i++) {
 
       this.temp=this.temp+this.storeExp[i];
