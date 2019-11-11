@@ -3,9 +3,8 @@ var display = {
   storeExp: [],
   addValues: function(textBox, Value) {
     this.temp = textBox.value;
-    if(Value==='=')
-    this.flushstoreExp();
-    textBox.value = this.temp + Value;
+   textBox.value = this.temp + Value;
+    if(Value!='=')
     this.storeExp.push(Value);
   },
   flushstoreExp: function()
@@ -15,6 +14,8 @@ var display = {
   getResult: function(textBox) {
     this.temp = textBox.value;
     textBox.value = eval(this.temp);
+    this.flushstoreExp();
+    this.storeExp.push(textBox.value);
     if (x == textBox.value) {
       textBox.value = 'Invalid';
     }
