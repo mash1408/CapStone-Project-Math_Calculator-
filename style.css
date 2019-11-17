@@ -14,7 +14,13 @@
       text-decoration: none;
       text-shadow: 0px 1px 0px #283966;
     }
-    
+    h1{
+      color:orange;
+      font-size:2em;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      transform:rotate(-1.2deg);
+      }
     button:hover {
      
       background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
@@ -62,7 +68,7 @@ button:active {
        background-color:#C0C0C0;
   position: absolute;
   right:57%;
-  top:65px;
+  top:115px;
   border: 3px solid orange;
 }
 .border{
